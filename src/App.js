@@ -1,12 +1,18 @@
 import './App.css';
-import Header from './Header';
+import Header from './components/Header';
+import CartItems from './components/CartItems';
+import CartTotal from './components/CartTotal.js';
 
 function App() {
   
   return (
     <div className="App">
       <Header title="Amazon Cart"/>
-    </div>
+      <div className="App-main">
+          <CartItems />
+          <CartTotal />
+          </div>
+     </div> 
   );
 }
 
