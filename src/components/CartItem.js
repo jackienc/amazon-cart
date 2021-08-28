@@ -1,7 +1,8 @@
 import React from 'react'
 import './CartItem.css'
 
-function CartItem() {
+function CartItem({items}) {
+    console.log('inside component items', items)
     return (
         <div className="CartItem">
             <div className="CartItem-image">
