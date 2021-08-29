@@ -2,7 +2,7 @@ import React from 'react'
 import items from '../Data'
 import './CartItem.css'
 
-function CartItem({index, item, changeItemQuantity}) {
+function CartItem({index, item, changeItemQuantity, deleteItem}) {
     
     return (
         <div className="CartItem">
@@ -29,8 +29,9 @@ function CartItem({index, item, changeItemQuantity}) {
                       <option value="6">Qty: 6</option>
                       </select>  
                 </div>
-                <div className="items-actions-divider">|</div>
-                <div className="item-delete">
+                <div className="items-actions-divider" >|</div>
+                <div className="item-delete" onClick={deleteItem.bind(this, index)}>
+                    
                 Delete
                 </div>
             </div>
