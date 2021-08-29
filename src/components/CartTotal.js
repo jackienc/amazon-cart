@@ -1,5 +1,6 @@
 import React from 'react'
 import './CartTotal.css'
+import NumberFormat from 'react-number-format';
 
 function CartTotal({items}) {
     const getTotalPrice = () => {
@@ -10,11 +11,15 @@ function CartTotal({items}) {
 
         return total;
     }
+
+    const getItemAmt = 
+        items.reduce((acc,item) => acc + item.quantity,0)
+       
     return (
         <div className="CartTotal">
-            <h3>Subtotal ({items.length} items):
+            <h3>Subtotal ({getItemAmt} items):
                 <span className="CartTotal-price">
-                        ${getTotalPrice()}
+                        <NumberFormat value={getTotalPrice()} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} />
                 </span>
             </h3>
             <button>
