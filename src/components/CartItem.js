@@ -1,5 +1,4 @@
 import React from 'react'
-import items from '../Data'
 import './CartItem.css'
 
 function CartItem({index, item, changeItemQuantity, deleteItem}) {
