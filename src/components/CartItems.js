@@ -2,8 +2,14 @@ import React from 'react'
 import CartItem from './CartItem'
 import './CartItems.css'
 
-function CartItems({items}) {
-console.log(items)
+function CartItems({items, setCartItems}) {
+
+    const changeItemQuantity = (e,index) => {
+        
+        const newItems = [...items]
+        items[index].quantity = e.target.value;
+        setCartItems(newItems);
+    }
     return (
         <div className="CartItems">
         <h1>Shopping Cart</h1>
@@ -11,8 +17,10 @@ console.log(items)
         <div className="CartItems-items">
             {items.map((item, index) => 
                 <CartItem 
+                index={index}
                 key={index}
                 item={item}
+                changeItemQuantity={changeItemQuantity}
                 />     
             )}
         </div>

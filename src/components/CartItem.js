@@ -2,7 +2,7 @@ import React from 'react'
 import items from '../Data'
 import './CartItem.css'
 
-function CartItem({item}) {
+function CartItem({index, item, changeItemQuantity}) {
     
     return (
         <div className="CartItem">
@@ -18,10 +18,15 @@ function CartItem({item}) {
             </div>
             <div className="item-actions">
                 <div className="item-quantity">
-                  <select value={item.quantity}>
+                  <select
+                        onChange={(e => changeItemQuantity(e, index))}
+                        value={item.quantity}>
                       <option value="1">Qty: 1</option>
                       <option value="2">Qty: 2</option>
                       <option value="3">Qty: 3</option>
+                      <option value="4">Qty: 4</option>
+                      <option value="5">Qty: 5</option>
+                      <option value="6">Qty: 6</option>
                       </select>  
                 </div>
                 <div className="items-actions-divider">|</div>
