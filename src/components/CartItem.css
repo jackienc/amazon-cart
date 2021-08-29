@@ -8,11 +8,14 @@
 .CartItem-image {
     width:180px;
     height: 180px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: 16px;
 }
 
 .CartItem-image img {
     object-fit: contain;
-    width: 100%;
+    width: 100%; 
 
 }
 
@@ -62,6 +65,7 @@
     
    font-size: 18px;
    font-weight: 700; 
+   margin-left: 16px;;
 }
 
 .item-actions {
